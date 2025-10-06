@@ -44,7 +44,7 @@ and **patients** can view published posts by category.
 
 6. Run the app:
    ```bash
-   flask run python app.py
+   python app.py
    ```
 7. Open `http://127.0.0.1:5000/` and log in with the sample users.
 
