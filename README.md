@@ -1,4 +1,4 @@
-# Flask Blog System (Modular)
+# Flask Blog System 
 
 This project adds a simple blog feature to a Flask app where **doctors** can create posts (draft support)
 and **patients** can view published posts by category.
@@ -16,7 +16,7 @@ and **patients** can view published posts by category.
 1. Create a Python virtual environment and activate it:
    ```bash
    python -m venv venv
-   source venv/bin/activate   # on Windows: venv\Scripts\activate
+   venv\Scripts\activate
    ```
 2. Install dependencies:
    ```bash
@@ -37,13 +37,14 @@ and **patients** can view published posts by category.
    ```bash
    python create_db.py
    ```
-   `create_db.py` will attempt to create tables and add two users:
+   `create_db.py` 
+   will attempt to create tables and add two users:
    - doctor / doctorpass (role: doctor)
    - patient / patientpass (role: patient)
 
 6. Run the app:
    ```bash
-   flask run
+   flask run python app.py
    ```
 7. Open `http://127.0.0.1:5000/` and log in with the sample users.
 
