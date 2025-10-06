@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Blog Categories</h2>
+<div class="list-group">
+  {% for c in categories %}
+  <a class="list-group-item list-group-item-action d-flex justify-content-between" href="{{ url_for('blogs_by_category', category_name=c) }}">
+    <div>{{ c }}</div>
+    <div><span class="badge bg-secondary">{{ cat_counts[c] }}</span></div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}

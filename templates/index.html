@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center">
+  <h1>Welcome to the Clinic Blog</h1>
+  <p class="lead">Doctors can write posts. Patients can read published posts by category.</p>
+  <a class="btn btn-primary" href="{{ url_for('blogs_index') }}">View Blogs</a>
+</div>
+{% endblock %}

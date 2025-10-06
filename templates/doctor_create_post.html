@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Create Blog Post</h2>
+<form method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input name="title" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Image</label>
+    <input type="file" name="image" class="form-control" accept="image/*">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Category</label>
+    <select name="category" class="form-select" required>
+      {% for c in categories %}
+      <option value="{{ c }}">{{ c }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Summary (short)</label>
+    <textarea name="summary" rows="2" class="form-control" required></textarea>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Content</label>
+    <textarea name="content" rows="6" class="form-control" required></textarea>
+  </div>
+  <div class="form-check mb-3">
+    <input type="checkbox" name="is_draft" class="form-check-input" id="draft">
+    <label for="draft" class="form-check-label">Save as draft</label>
+  </div>
+  <button class="btn btn-success">Save Post</button>
+</form>
+{% endblock %}

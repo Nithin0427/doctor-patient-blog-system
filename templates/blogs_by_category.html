@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Category: {{ category }}</h2>
+<div class="row">
+  {% for p in posts %}
+  <div class="col-md-6 mb-3">
+    <div class="card">
+      {% if p.image_filename %}
+      <img src="{{ url_for('uploaded_image', filename=p.image_filename) }}" class="card-img-top" style="max-height:250px; object-fit:cover;">
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title"><a href="{{ url_for('blog_detail', post_id=p.id) }}">{{ p.title }}</a></h5>
+        <p class="card-text">{{ p.summary_truncated(15) }}</p>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="col-12"><div class="alert alert-info">No posts in this category yet.</div></div>
+  {% endfor %}
+</div>
+{% endblock %}
